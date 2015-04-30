@@ -65,15 +65,17 @@ namespace CSVFileProcessor
         // Main function
         static void Main(string[] args)
         {
+            string ngram = "3";
+
             // List to store all file names in folder
             List<string> allFileNames = new List<string>();
 
             // Reading all files in the directory with specific ending
             DirectoryInfo dInfo = new DirectoryInfo("..\\..\\csvFiles");
-            FileInfo[] fInfo = dInfo.GetFiles("*-3gram-best-100.csv");
+            FileInfo[] fInfo = dInfo.GetFiles("*-" + ngram + "gram-best-100.csv");
 
             // Reading the best count n-gram csv file
-            string[] bestFile = File.ReadAllLines("..\\..\\othercsvFiles\\best-3-gram-100.csv");
+            string[] bestFile = File.ReadAllLines("..\\..\\othercsvFiles\\best-" + ngram + "-gram-100.csv");
 
             // List to store opCodes and their respective counts
             List<opNCount> best = new List<opNCount>();
@@ -113,7 +115,7 @@ namespace CSVFileProcessor
             // Removing the extra elements from the name
             foreach (FileInfo file in fInfo)
             {
-                allFileNames.Add(file.Name.Replace("-3gram-best-100.csv", ""));
+                allFileNames.Add(file.Name.Replace("-" + ngram + "gram-best-100.csv", ""));
             }
 
             // data stores all the data
@@ -195,7 +197,7 @@ namespace CSVFileProcessor
             Console.WriteLine("Writing to the file");
 
             // Writing all data to a csv file
-            StreamWriter writeMe = new StreamWriter("..\\..\\outputCSV\\final-data-3gram.csv");
+            StreamWriter writeMe = new StreamWriter("..\\..\\outputCSV\\final-data-" + ngram + "gram.csv");
             
             // Writing Headers
             string line = "FileName,";
