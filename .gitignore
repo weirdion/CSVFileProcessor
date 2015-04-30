@@ -17,6 +17,14 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# csvFiles ignored
+*-1gram-best-100.csv
+*-2gram-best-100.csv
+*-3gram-best-100.csv
+best-1-gram-100.csv
+best-2-gram-100.csv
+best-3-gram-100.csv
+
 # =========================
 # Operating System Files
 # =========================
