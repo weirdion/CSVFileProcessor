@@ -1,0 +1,6 @@
+C:\workspace\Visual Studio 2013\Projects\CSVFileProcessor\CSVFileProcessor\bin\Debug\CSVFileProcessor.exe.config
+C:\workspace\Visual Studio 2013\Projects\CSVFileProcessor\CSVFileProcessor\bin\Debug\CSVFileProcessor.exe
+C:\workspace\Visual Studio 2013\Projects\CSVFileProcessor\CSVFileProcessor\bin\Debug\CSVFileProcessor.pdb
+C:\workspace\Visual Studio 2013\Projects\CSVFileProcessor\CSVFileProcessor\obj\Debug\CSVFileProcessor.csprojResolveAssemblyReference.cache
+C:\workspace\Visual Studio 2013\Projects\CSVFileProcessor\CSVFileProcessor\obj\Debug\CSVFileProcessor.exe
+C:\workspace\Visual Studio 2013\Projects\CSVFileProcessor\CSVFileProcessor\obj\Debug\CSVFileProcessor.pdb
