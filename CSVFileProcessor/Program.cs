@@ -67,7 +67,7 @@ namespace CSVFileProcessor
         // Main function
         static void Main(string[] args)
         {
-            string ngram = "3";
+            string ngram = "2";
 
             // List to store all file names in folder
             List<string> allFileNames = new List<string>();
@@ -94,7 +94,7 @@ namespace CSVFileProcessor
 
             // Change the size of string array for number of features to be selected from the top count
             // check stores all the opCodes we are using
-            string[] check = new string[40];
+            string[] check = new string[60];
             int i = 0;
 
             foreach(opNCount bg in best.Take(check.Length))
