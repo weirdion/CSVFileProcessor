@@ -67,17 +67,17 @@ namespace CSVFileProcessor
         // Main function
         static void Main(string[] args)
         {
-            string ngram = "2";
+            string ngram = "3";
 
             // List to store all file names in folder
             List<string> allFileNames = new List<string>();
 
             // Reading all files in the directory with specific ending
-            DirectoryInfo dInfo = new DirectoryInfo("..\\..\\csvFiles\\test");
+            DirectoryInfo dInfo = new DirectoryInfo("..\\..\\csvFiles\\train");
             FileInfo[] fInfo = dInfo.GetFiles("*-" + ngram + "gram-best-100.csv");
 
             // Reading the best count n-gram csv file
-            string[] bestFile = File.ReadAllLines("..\\..\\othercsvFiles\\test\\best-" + ngram + "-gram-100.csv");
+            string[] bestFile = File.ReadAllLines("..\\..\\othercsvFiles\\best-" + ngram + "-gram-100.csv");
 
             // List to store opCodes and their respective counts
             List<opNCount> best = new List<opNCount>();
@@ -103,16 +103,16 @@ namespace CSVFileProcessor
                 i++;
             }
 
+/*
+                    // Writing top 30 into a file
+                      StreamWriter writer = new StreamWriter("..\\..\\outputCSV\\" + ngram + "gram-top15.csv");
 
-            /*         // Writing top 30 into a file
-                      StreamWriter writer = new StreamWriter("..\\..\\outputCSV\\1gram-top30.csv");
-
-                       foreach(opNCount bg in best.Take(30))
+                       foreach(opNCount bg in best.Take(15))
                        {
                            writer.WriteLine(bg.opCode + "," + bg.count);
                        }
                        writer.Close();
-                       */
+ */                     
 
             // Removing the extra elements from the name
             foreach (FileInfo file in fInfo)
@@ -170,7 +170,7 @@ namespace CSVFileProcessor
                 data[counter] = new DataExample(allFileNames[counter], count);
                 counter++;
             }
-/*
+
             // Reading trainLabels.csv
             string[] labelFile = File.ReadAllLines("..\\..\\othercsvFiles\\trainLabels.csv");
 
@@ -194,8 +194,7 @@ namespace CSVFileProcessor
                     }
                 }
             }
-
-*/           
+           
             Console.WriteLine("Writing to the file");
 
             // Writing all data to a csv file
@@ -210,7 +209,8 @@ namespace CSVFileProcessor
                 line = line + x + ",";
             }
 
-            line = line.TrimEnd(',');
+            // For test set, removing the last ','
+            // line = line.TrimEnd(',');
 
             writeMe.WriteLine(line);
 
@@ -224,7 +224,8 @@ namespace CSVFileProcessor
                     line = line + counts + ",";
                 }
 
-                line = line.TrimEnd(',');
+                // For test set, removing the last ','
+                // line = line.TrimEnd(',');
 
                 writeMe.WriteLine(line);
             }

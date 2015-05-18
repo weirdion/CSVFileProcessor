@@ -1,0 +1,15 @@
+mov-mov,14830285
+or-or,7576689
+push-push,6080634
+or-mov,5703188
+sub-sub,5639760
+mov-or,5456821
+sub-mov,5232227
+xor-or,5188020
+call-sub,4663212
+mul-imul,4073779
+mov-push,3886004
+push-mov,3871032
+push-call,3460295
+or-jz,3139011
+mov-mul,3053339
